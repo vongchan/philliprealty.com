@@ -120,7 +120,7 @@ form.addEventListener('submit', async function(e) {
     message: form.message.value
   };
 
-  await fetch("https://YOUR-CLOUDFLARE-WORKER-URL", {
+  await fetch("https://philliprealty-form.vong-chanz.workers.dev", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
