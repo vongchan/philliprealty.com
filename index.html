@@ -90,19 +90,48 @@
 
   <section id="contact" class="contact">
     <h2 class="section-title">Contact Phillip Realty</h2>
-    <p>Email: <a href="mailto:info@philliprealty.com">info@philliprealty.com</a> | Phone: <a href="tel:+1 617-4337-3883">(617) 337-3883</a></p>
+    <p>Email: <a href="mailto:info@philliprealty.com">info@philliprealty.com</a> | Phone: <a href="tel:+161743373883">(617) 337-3883</a></p>
     <br />
-    <form action="mailto:info@philliprealty.com" method="post" enctype="text/plain">
+
+    <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <input type="tel" name="phone" placeholder="Your Phone" />
       <textarea name="message" placeholder="How can I help?" required></textarea>
       <button class="btn" type="submit">Send Message</button>
     </form>
+
   </section>
 
   <footer>
     <p>© 2026 Phillip Realty. All rights reserved.</p>
   </footer>
+
+<script>
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    message: form.message.value
+  };
+
+  await fetch("https://YOUR-CLOUDFLARE-WORKER-URL", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  alert("Message sent successfully!");
+  form.reset();
+});
+</script>
+
 </body>
 </html>
