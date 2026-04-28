@@ -1,172 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phillip Realty | Real Estate Agent</title>
-  <meta name="description" content="Phillip Realty helps buyers, sellers, and investors with trusted real estate guidance." />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; color: #1f2937; line-height: 1.6; background: #f8fafc; }
-    a { color: inherit; text-decoration: none; }
-    header { background: #0f172a; color: white; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .logo { font-size: 24px; font-weight: 700; letter-spacing: .5px; }
-    nav a { margin-left: 20px; font-weight: 600; }
-    .hero { padding: 90px 8%; background: linear-gradient(rgba(15,23,42,.75), rgba(15,23,42,.75)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; }
-    .hero-content { max-width: 760px; }
-    .hero h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1.1; margin-bottom: 20px; }
-    .hero p { font-size: 20px; margin-bottom: 30px; color: #e5e7eb; }
-    .btn { display: inline-block; background: #c9a227; color: #111827; padding: 14px 24px; border-radius: 8px; font-weight: 700; margin-right: 10px; margin-bottom: 10px; }
-    .btn.secondary { background: white; }
-    section { padding: 70px 8%; }
-    .section-title { font-size: 34px; margin-bottom: 18px; color: #0f172a; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 30px; }
-    .card { background: white; padding: 28px; border-radius: 14px; box-shadow: 0 8px 24px rgba(15,23,42,.08); }
-    .card h3 { color: #0f172a; margin-bottom: 10px; }
-    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .about img { width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
-    .contact { background: #0f172a; color: white; }
-    .contact .section-title { color: white; }
-    form { display: grid; gap: 14px; max-width: 650px; }
-    input, textarea { padding: 14px; border: none; border-radius: 8px; font-size: 16px; }
-    textarea { min-height: 130px; }
-    button { border: none; cursor: pointer; font-size: 16px; }
-    footer { text-align: center; padding: 24px 8%; background: #020617; color: #cbd5e1; }
-    .small { font-size: 14px; color: #64748b; margin-top: 16px; }
-    .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-          }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Phillip Realty | Real Estate Agent</title>
 
-    .profile-photo {
-      width: 100%; /* Adjusts to container */
-      max-width: 360px; /* Limits size on larger screens */
-      height: auto;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    
-    @media (max-width: 800px) {
-      .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-    
-      .profile-photo {
-        margin: 0 auto;
-        margin-bottom: 20px;
-      }
-    }
-    }
-    }
-  </style>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; color: #1f2937; line-height: 1.6; background: #f8fafc; }
+a { text-decoration: none; color: inherit; }
+
+header {
+  background: #0f172a;
+  color: white;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo { font-size: 24px; font-weight: 700; }
+
+nav a { margin-left: 20px; }
+
+.hero {
+  padding: 90px 8%;
+  background: linear-gradient(rgba(15,23,42,.75), rgba(15,23,42,.75)),
+  url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover;
+  color: white;
+}
+
+section { padding: 70px 8%; }
+
+.section-title { font-size: 34px; margin-bottom: 18px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* 🔥 SERVICES BACKGROUND */
+#services {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+#services::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  z-index: 0;
+}
+
+#services > * {
+  position: relative;
+  z-index: 1;
+}
+
+#services .card {
+  background: rgba(255,255,255,0.92);
+  color: #1f2937;
+  padding: 28px;
+  border-radius: 14px;
+}
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+}
+
+/* CONTACT */
+.contact {
+  background: #0f172a;
+  color: white;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  max-width: 650px;
+}
+
+input, textarea {
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: gold;
+  padding: 14px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 24px;
+  background: #020617;
+  color: white;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">Phillip Realty</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-   
-    <div class="hero-content">
-      <h1>Your Trusted Real Estate Partner</h1>
-      <p>Helping buyers, sellers, and investors make confident real estate decisions.</p>
-      <a class="btn" href="#contact">Contact Me</a>
-      <a class="btn secondary" href="tel:+16173373883">Call Now</a>
-    </div>
-  </section>
+<header>
+  <div class="logo">Phillip Realty</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="services">
-    <h2 class="section-title">Real Estate Services</h2>
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80" alt="Modern home exterior" />
-    <p>Professional guidance from the first conversation to closing day.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Buying a Home</h3>
-        <p>Search smarter, compare neighborhoods, and negotiate with confidence.</p>
-      </div>
-      <div class="card">
-        <h3>Selling Your Home</h3>
-        <p>Pricing strategy, marketing support, and guidance to help maximize your sale.</p>
-      </div>
-      <div class="card">
-        <h3>Investment Properties</h3>
-        <p>Support for investors looking for rental, multi-family, or flip opportunities.</p>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Your Trusted Real Estate Partner</h1>
+  <p>Helping buyers, sellers, and investors make confident real estate decisions.</p>
+</section>
 
-  <section id="about" class="about">
-    <img src="images/myphoto.jpg" alt="Phillip Chan" class="profile-photo">
-    <div>
-      <h2 class="section-title">About Phillip</h2>
-      <p>Phillip Chan is a licensed real estate agent serving the Massachusetts, helping buyers, sellers, and investors make confident real estate decisions. With a practical, honest, and client-focused approach, Phillip provides guidance from the first conversation through closing, making the process clear, smooth, and stress-free.</p>
-      <p class="small">License #9632842</p>
+<section id="services">
+  <h2 class="section-title">Real Estate Services</h2>
+  <p>Professional guidance from the first conversation to closing day.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Buying a Home</h3>
+      <p>Search smarter, compare neighborhoods, and negotiate with confidence.</p>
     </div>
-  
-  </section>
+    <div class="card">
+      <h3>Selling Your Home</h3>
+      <p>Pricing strategy and marketing support to maximize your sale.</p>
+    </div>
+    <div class="card">
+      <h3>Investment Properties</h3>
+      <p>Support for rental, multi-family, and flip opportunities.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <img src="images/myphoto.jpg" alt="Phillip Chan" class="profile-photo">
+
+  <div>
+    <h2 class="section-title">About Phillip</h2>
+    <p>
+      Phillip Chan is a licensed real estate agent serving Massachusetts,
+      helping buyers, sellers, and investors make confident real estate decisions.
+      With a practical, honest, and client-focused approach, Phillip provides
+      guidance from the first conversation through closing.
+    </p>
+    <p class="small">License #9632842</p>
+  </div>
+</section>
 
 <section id="contact" class="contact">
   <h2 class="section-title">Contact Phillip Realty</h2>
+
   <p>
     Email: <a href="mailto:info@philliprealty.com">info@philliprealty.com</a> |
     Phone: <a href="tel:+16173373883">(617) 337-3883</a>
   </p>
-  <br />
+
+  <br>
 
   <form id="contactForm" action="https://formspree.io/f/xkoklbng" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input type="tel" name="phone" placeholder="Your Phone" />
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Your Phone">
     <textarea name="message" placeholder="How can I help?" required></textarea>
 
-    <input type="hidden" name="_subject" value="New Website Lead - Phillip Realty" />
+    <input type="hidden" name="_subject" value="New Website Lead - Phillip Realty">
 
-    <button class="btn" type="submit">Send Message</button>
+    <button type="submit">Send Message</button>
   </form>
 
-  <p id="formSuccess" style="display:none; color: lightgreen; margin-top: 1em;">Your message has been sent!</p>
+  <p id="formSuccess" style="display:none; color: lightgreen; margin-top: 1em;">
+    Your message has been sent!
+  </p>
 </section>
 
 <script>
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('formSuccess');
+const form = document.getElementById('contactForm');
+const successMsg = document.getElementById('formSuccess');
 
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault(); // Prevent page reload
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
 
-    const formData = new FormData(form);
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+  const formData = new FormData(form);
 
-      if (response.ok) {
-        form.reset();
-        successMsg.style.display = 'block';
-      } else {
-        alert("There was a problem submitting the form.");
-      }
-    } catch (error) {
-      alert("There was a problem submitting the form.");
-    }
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: { 'Accept': 'application/json' }
   });
+
+  if (response.ok) {
+    form.reset();
+    successMsg.style.display = 'block';
+  } else {
+    alert("Something went wrong.");
+  }
+});
 </script>
 
-  <footer>
-    <p>© 2026 Phillip Realty. All rights reserved.</p>
-  </footer>
-
-
+<footer>
+  <p>© 2026 Phillip Realty. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
