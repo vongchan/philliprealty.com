@@ -80,30 +80,35 @@ section { padding: 70px 8%; }
 
 /* CONTACT */
 .contact {
-  background: #0f172a;
+  position: relative;
   color: white;
+  overflow: hidden;
 }
 
-form {
-  display: grid;
-  gap: 14px;
-  max-width: 650px;
+/* Background house image */
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover;
+  z-index: 0;
 }
 
-input, textarea {
-  padding: 14px;
-  border-radius: 8px;
-  border: none;
+/* Dark overlay (same style as hero) */
+.contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.75);
+  z-index: 0;
 }
 
-button {
-  background: gold;
-  padding: 14px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
+/* Keep text above */
+.contact * {
+  position: relative;
+  z-index: 1;
 }
-
+  
 /* FOOTER */
 footer {
   text-align: center;
