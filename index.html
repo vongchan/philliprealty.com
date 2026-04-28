@@ -107,31 +107,32 @@
     <p>© 2026 Phillip Realty. All rights reserved.</p>
   </footer>
 
-<script>
-const form = document.getElementById('contactForm');
+<section id="contact" class="contact">
+  <h2>Contact Phillip Realty</h2>
 
-form.addEventListener('submit', async function(e) {
-  e.preventDefault();
+  <p>
+    Email: info@philliprealty.com |
+    Phone: (617) 337-3883
+  </p>
 
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    message: form.message.value
-  };
+  <br>
 
-  await fetch("https://philliprealty-form.vong-chanz.workers.dev", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
+  <form action="https://formspree.io/f/xkoklbng" method="POST">
 
-  alert("Message sent successfully!");
-  form.reset();
-});
-</script>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <input type="tel" name="phone" placeholder="Your Phone">
+
+    <textarea name="message" placeholder="How can I help?" required></textarea>
+
+    <input type="hidden" name="_subject" value="New Website Lead - Phillip Realty">
+
+    <button type="submit">Send Message</button>
+
+  </form>
+</section>
 
 </body>
 </html>
