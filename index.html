@@ -41,39 +41,25 @@ section { padding: 70px 8%; }
 
 /* 🔥 SERVICES BACKGROUND */
 #services {
-  position: relative;
-  overflow: hidden;
-  color: white;
+  background: #f8fafc;
+  color: #1f2937;
 }
 
-#services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  filter: blur(8px);
-  transform: scale(1.08);
-  z-index: 0;
-}
-
+#services::before,
 #services::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.6);
-  z-index: 0;
+  display: none;
 }
 
-#services > * {
-  position: relative;
-  z-index: 1;
+#services .section-title {
+  color: #0f172a;
 }
 
 #services .card {
-  background: rgba(255,255,255,0.92);
+  background: white;
   color: #1f2937;
   padding: 28px;
   border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15,23,42,.08);
 }
 
 /* ABOUT */
